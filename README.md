@@ -1,4 +1,4 @@
-# SOLID Principles for C# Developers
+# SOLID Principles for C# Developers | Single Responsibility Principle
 
 A sample application used to demonstrate SOLID principles.
 
