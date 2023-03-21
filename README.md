@@ -21,5 +21,5 @@ With this small changes we are delegating the details to other classes. These cl
 
 ## Reporting Bugs and Asking Questions
 
-Please use [Issues](https://github.com/omrcm/SolidSamples/issues) to report actual bugs in the code. If you have questions, please ask them on twitter (mention [@omrcm](https://twitter.com/omrcm)).
+Please use [Issues](https://github.com/omrcm/SolidPrinciples/issues) to report actual bugs in the code. If you have questions, please ask them on twitter (mention [@omrcm](https://twitter.com/omrcm)).
 
