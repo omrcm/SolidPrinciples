@@ -7,24 +7,27 @@ public class RatingEngine
 {
     public decimal Rating { get; set; }
 
+    public ConsoleLogger Logger { get; set; } = new ConsoleLogger();
+
+    public FileSource DataSource { get; set; } = new FileSource();
     public void Rate()
     {
-        Console.WriteLine("Rate Starting...");
+        Logger.Log("Rate Starting...");
         
-        Console.WriteLine("Loading from file...");
+        Logger.Log("Loading from file...");
 
-        var data = File.ReadAllText("data.json");
+        var data = DataSource.GetDataFromSource();
 
         var policy = JsonConvert.DeserializeObject<Policy>(data, new StringEnumConverter());
 
         switch (policy.Type)
         {
             case PolicyType.Auto:
-                Console.WriteLine("Rating Auto policy.");
-                Console.WriteLine("Validating policy");
+                Logger.Log("Rating Auto policy.");
+                Logger.Log("Validating policy");
                 if (String.IsNullOrEmpty(policy.Make))
                 {
-                    Console.WriteLine("Auto policy must specify Make");
+                    Logger.Log("Auto policy must specify Make");
                     return;
                 }
 
@@ -39,38 +42,38 @@ public class RatingEngine
                 }
                 break;
             case PolicyType.Land:
-                Console.WriteLine("Rating LAND policy.");
-                Console.WriteLine("Validating policy");
+                Logger.Log("Rating LAND policy.");
+                Logger.Log("Validating policy");
                 if (policy.BondAmount == 0 || policy.Valuation == 0)
                 {
-                    Console.WriteLine("Land policy must specify BondAmount and Valuation");
+                    Logger.Log("Land policy must specify BondAmount and Valuation");
                     return;
                 }
 
                 if (policy.BondAmount < 0.8m * policy.Valuation)
                 {
-                    Console.WriteLine("Insufficient bond amount");
+                    Logger.Log("Insufficient bond amount");
                     return;
                 }
 
                 Rating = policy.BondAmount * 0.5m;
                 break;
             case PolicyType.Life:
-                Console.WriteLine("Rating LIFE policy.");
-                Console.WriteLine("Validating policy");
+                Logger.Log("Rating LIFE policy.");
+                Logger.Log("Validating policy");
                 if (policy.DateOfBirth == DateTime.MinValue)
                 {
-                    Console.WriteLine("Life policy must include Date of Birth.");
+                    Logger.Log("Life policy must include Date of Birth.");
                     return;
                 }
                 if (policy.DateOfBirth < DateTime.Today.AddYears(-100))
                 {
-                    Console.WriteLine("Centenarians are not eligible for coverage.");
+                    Logger.Log("Centenarians are not eligible for coverage.");
                     return;
                 }
                 if (policy.Amount == 0)
                 {
-                    Console.WriteLine("Life policy must include an Amount.");
+                    Logger.Log("Life policy must include an Amount.");
                     return;
                 }
                 int age = DateTime.Today.Year - policy.DateOfBirth.Year;
@@ -89,10 +92,10 @@ public class RatingEngine
                 Rating = baseRate;
                 break;
             default:
-                Console.WriteLine("Unknown policy type");
+                Logger.Log("Unknown policy type");
                 break;
         }
         
-        Console.WriteLine("Rating complete.");
+        Logger.Log("Rating complete.");
     }
 }
