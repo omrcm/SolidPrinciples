@@ -16,7 +16,7 @@ With this small changes we are delegating the details to other classes. These cl
 
 ## Key Takeaways
 
--> Each class should have a single responsibility, or reason to change
+-> Each class should have a single responsibility, or reason to change <br/>
 -> Strive for high cohesion and loose coupling
 
 ## Reporting Bugs and Asking Questions
