@@ -22,6 +22,18 @@
         <None Update="data.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Remove="Factory\**" />
+        <None Remove="Rate\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Compile Remove="Factory\**" />
+      <Compile Remove="Rate\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Remove="Factory\**" />
+      <EmbeddedResource Remove="Rate\**" />
     </ItemGroup>
 
 </Project>

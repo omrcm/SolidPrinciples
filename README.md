@@ -1,10 +1,10 @@
-# SOLID Principles for C# Developers
+# SOLID Principles for C# Developers | 
 
 A sample application used to demonstrate SOLID principles.
 
 ## Give a Star! :star:
 If you like this project please give it a star. Thanks!
-
+""
 ## Usage Instructions
 
 The `master` branch shows the *initial* code. It's the starting point. If you want to follow along, you can Fork this repository or download a ZIP with the code. There are separate tags (and branches for that matter) for each of the 5 principles that you can review or download as well. Here are links you can use to jump to these tagged versions in your browser:
