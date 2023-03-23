@@ -1,7 +1,8 @@
-namespace SolidRating;
+namespace SolidPrinciples;
 public enum PolicyType
 {
-    Life = 0,
-    Land = 1,
-    Auto = 2
+    Life = 10,
+    Land = 20,
+    Auto = 30,
+    Flood = 40
 }

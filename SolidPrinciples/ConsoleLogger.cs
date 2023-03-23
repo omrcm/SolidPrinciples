@@ -1,4 +1,4 @@
-namespace SolidRating;
+namespace SolidPrinciples;
 
 public class ConsoleLogger
 {

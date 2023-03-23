@@ -1,24 +1,21 @@
-# SOLID Principles for C# Developers | Single Responsibility Principle
+# SOLID Principles for C# Developers | Open / Closed Principle
 
-A sample application used to demonstrate SOLID principles.
+A sample application used to demonstrate SOLID principles. This code base is cloned from main repository and 
+modified to show how OCP works 
 
 ## Give a Star! :star:
 If you like this project please give it a star. Thanks!
 
 ## Usage Instructions
 
-This branch shows how we can implement the SRP (Single Responsibility Principle) to our code.
+This branch shows how we can implement the OCP (Open / Closed Principle) to our code.
 
-1) Adding a new class named ConsoleLogger and replacing all Console.WriteLine with the new method in this class (Log)
-2) Adding a new class named FileSource and getting data over this class
-
-With this small changes we are delegating the details to other classes. These classes will doing only one thing and it is more easy to managing
 
 ## Key Takeaways
 
--> Each class should have a single responsibility, or reason to change <br/>
--> Strive for high cohesion and loose coupling <br/>
--> Keep classes small, focused and testable
+-> <br/>
+-> <br/>
+-> <br/>
 
 ## Reporting Bugs and Asking Questions
 

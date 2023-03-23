@@ -1,5 +1,5 @@
 ﻿
-namespace SolidRating
+namespace SolidPrinciples
 {
     class Program
     {
