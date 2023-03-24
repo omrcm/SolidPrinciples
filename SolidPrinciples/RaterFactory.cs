@@ -4,18 +4,26 @@ public class RaterFactory
 {
     public Rater Create(Policy policy, RatingEngine engine)
     {
-        switch (policy.Type)
+        /* using reflection 
+        try
         {
-            case PolicyType.Auto:
-                return new AutoPolicy(engine, engine.Logger);
-            case PolicyType.Land:
-                return new LandPolicy(engine, engine.Logger);
-            case PolicyType.Life:
-                return new LifePolicy(engine, engine.Logger);
-            case PolicyType.Flood:
-                return new FloodPolicy(engine, engine.Logger);
-            default:
-                return new UnknownPolicyRater(engine, engine.Logger);
+            return (Rater)Activator.CreateInstance(
+                Type.GetType($"SolidPrinciples.{policy.Type}.Policy"),
+                new object[] {engine, engine.Logger});
         }
+        catch
+        {
+            return null;
+        }
+        */
+
+        return policy.Type switch
+        {
+            PolicyType.Auto => new AutoPolicy(engine, engine.Logger),
+            PolicyType.Land => new LandPolicy(engine, engine.Logger),
+            PolicyType.Life => new LifePolicy(engine, engine.Logger),
+            PolicyType.Flood => new FloodPolicy(engine, engine.Logger),
+            _ => new UnknownPolicyRater(engine, engine.Logger)
+        };
     }
 }
