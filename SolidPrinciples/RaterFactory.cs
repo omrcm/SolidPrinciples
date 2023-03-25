@@ -4,7 +4,7 @@ public class RaterFactory
 {
     public Rater Create(Policy policy, RatingEngine engine)
     {
-        /* using reflection 
+        
         try
         {
             return (Rater)Activator.CreateInstance(
@@ -13,9 +13,9 @@ public class RaterFactory
         }
         catch
         {
-            return null;
+            return new UnknownPolicyRater(engine, engine.Logger);
         }
-        */
+        
 
         return policy.Type switch
         {
