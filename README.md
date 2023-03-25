@@ -10,9 +10,6 @@ If you like this project please give it a star. Thanks!
 
 This branch shows how we can implement the LSP (Liskov Substitution Principle) to our code.
 
-1. Creating new classes for each Policy Type (Flood, Land, Life and Auto)
-2. Creating a RaterFactory class will give us to manage the switch statement out side the Engine class.
-3. Adding a exception for unknown policy types. (UnknownPolicyRater class)
 
 ## Key Takeaways
 
