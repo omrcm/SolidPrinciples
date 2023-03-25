@@ -13,8 +13,12 @@ This branch shows how we can implement the LSP (Liskov Substitution Principle) t
 
 ## Key Takeaways
 
-->  <br/>
-->
+-> Subtypes must be substitutable for their base types<br/>
+-> Ensure base type invariants are enforced
+-> Look for;
+    - Type checking
+    - Null checking
+    - NotImplementedException
 
 ## Reporting Bugs and Asking Questions
 
