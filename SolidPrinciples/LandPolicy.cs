@@ -2,7 +2,7 @@ namespace SolidPrinciples;
 
 public class LandPolicy : Rater
 {
-    public LandPolicy(RatingEngine engine, ConsoleLogger logger) : base(engine, logger)
+    public LandPolicy(IRatingContext context) : base(context)
     {
     }
 
@@ -20,6 +20,6 @@ public class LandPolicy : Rater
             _logger.Log("Insufficient bond amount.");
             return;
         }
-        _engine.Rating = policy.BondAmount * 0.05m;
+        _context.UpdateRating(policy.BondAmount * 0.05m);
     }
 }

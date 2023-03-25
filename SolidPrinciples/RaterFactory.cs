@@ -2,7 +2,7 @@ namespace SolidPrinciples;
 
 public class RaterFactory
 {
-    public Rater Create(Policy policy, RatingEngine engine)
+    public Rater Create(Policy policy, IRatingContext context)
     {
         // using reflaction
         /*
@@ -10,21 +10,21 @@ public class RaterFactory
         {
             return (Rater)Activator.CreateInstance(
                 Type.GetType($"SolidPrinciples.{policy.Type}.Policy"),
-                new object[] {engine, engine.Logger});
+                new object[] {context});
         }
         catch
         {
-            return new UnknownPolicyRater(engine, engine.Logger);
+            return new UnknownPolicyRater(context);
         }
         */
 
         return policy.Type switch
         {
-            PolicyType.Auto => new AutoPolicy(engine, engine.Logger),
-            PolicyType.Land => new LandPolicy(engine, engine.Logger),
-            PolicyType.Life => new LifePolicy(engine, engine.Logger),
-            PolicyType.Flood => new FloodPolicy(engine, engine.Logger),
-            _ => new UnknownPolicyRater(engine, engine.Logger)
+            PolicyType.Auto => new AutoPolicy(context),
+            PolicyType.Land => new LandPolicy(context),
+            PolicyType.Life => new LifePolicy(context),
+            PolicyType.Flood => new FloodPolicy(context),
+            _ => new UnknownPolicyRater(context)
         };
     }
 }

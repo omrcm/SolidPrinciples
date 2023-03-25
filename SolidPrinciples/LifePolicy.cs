@@ -2,7 +2,7 @@ namespace SolidPrinciples;
 
 public class LifePolicy : Rater
 {
-    public LifePolicy(RatingEngine engine, ConsoleLogger logger) : base(engine, logger)
+    public LifePolicy(IRatingContext context) : base(context)
     {
     }
 
@@ -35,9 +35,9 @@ public class LifePolicy : Rater
         decimal baseRate = policy.Amount * age / 200;
         if (policy.IsSmoker)
         {
-            _engine.Rating = baseRate * 2;
+            _context.UpdateRating(baseRate * 2);
             return;
         }
-        _engine.Rating = baseRate;
+        _context.UpdateRating(baseRate);
     }
 }

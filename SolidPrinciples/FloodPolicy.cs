@@ -2,7 +2,7 @@ namespace SolidPrinciples;
 
 public class FloodPolicy : Rater
 {
-    public FloodPolicy(RatingEngine engine, ConsoleLogger logger) : base(engine, logger)
+    public FloodPolicy(IRatingContext context) : base(context)
     {
     }
 
@@ -33,6 +33,6 @@ public class FloodPolicy : Rater
             multiple = 1.0m;
         }
 
-        _engine.Rating = policy.BondAmount * 0.5m * multiple;
+        _context.UpdateRating(policy.BondAmount * 0.5m * multiple);
     }
 }
