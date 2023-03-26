@@ -1,7 +1,13 @@
 # SOLID Principles for C# Developers | Interface Segregation Principle
 
 A sample application used to demonstrate SOLID principles. This code base is cloned from main repository and
-modified to show how ISP works
+modified to show how ISP works <br/>
+
+-> Clients should not be forced to depend on methods they do not use <br/>
+
+What is Client? <br/>
+
+The client is the code that is interacting with an instance of the interface. It's the calling code
 
 ## Give a Star! :star:
 If you like this project please give it a star. Thanks!
