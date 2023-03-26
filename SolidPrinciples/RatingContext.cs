@@ -3,8 +3,7 @@ namespace SolidPrinciples;
 public class RatingContext : IRatingContext
 {
     public RatingEngine Engine { get; set; }
-    public ConsoleLogger Logger => new ConsoleLogger();
-    
+
     public void Log(string message)
     {
         new ConsoleLogger().Log(message);

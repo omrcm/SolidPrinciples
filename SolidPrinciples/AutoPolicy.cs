@@ -2,28 +2,27 @@ namespace SolidPrinciples;
 
 public class AutoPolicy : Rater
 {
-    public AutoPolicy(IRatingContext context): base(context) { }
+    public AutoPolicy(IRatingUpdater ratingUpdater): base(ratingUpdater) { }
 
     public override void Rate(Policy policy)
     {
-        _logger.Log("Rating Auto policy");
-        _logger.Log("Validating");
+        Logger.Log("Rating Auto policy");
+        Logger.Log("Validating");
 
         if (String.IsNullOrEmpty(policy.Make))
         {
-            _logger.Log("AutoPolicy must be speciy Make");
+            Logger.Log("AutoPolicy must be speciy Make");
             return;
         }
 
-        if (policy.Make == "BMW")
+        if (policy.Make != "BMW") return;
+        if (policy.Deductible < 500)
         {
-            if (policy.Deductible < 500)
-            {
-                _context.UpdateRating(1000m);
-            }
-
-            _context.UpdateRating(900m);
+            _ratingUpdater.UpdateRating(1000m);
+            return;
         }
+
+        _ratingUpdater.UpdateRating(900m);
     }
     
 }
