@@ -25,7 +25,18 @@ If you like this project please give it a star. Thanks!
 
 This branch shows how we can implement the ISP (Interface Segregation Principle) to our code.
 
+* Look to large interfaces
+* Check for NotImplementedException
 
+Don't forget that C# is supporting "Multiple Interface Inheritance"
+
+## Related Concepts
+
+Interface Segregation Principle is related with ;
+
+* [Liskov Substitution Principle](https://github.com/omrcm/SolidPrinciples/tree/lsp)
+* Cohesion and [Single Responsibility Principle](https://github.com/omrcm/SolidPrinciples/tree/srp)
+* Pain Driven Development
 
 ## Key Takeaways
 
