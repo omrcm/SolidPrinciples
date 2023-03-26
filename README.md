@@ -10,11 +10,11 @@ If you like this project please give it a star. Thanks!
 
 This branch shows how we can implement the LSP (Liskov Substitution Principle) to our code.
 
-Follow the "Tell, Don't Ask" principle
-Minimize null checks with
-    - C# features
-    - Guard clauses
-    - Null Object design pattern
+Follow the "Tell, Don't Ask" principle <br/>
+Minimize null checks with<br/>
+    - C# features <br/>
+    - Guard clauses <br/>
+    - Null Object design pattern<br/>
 
 Follow ISP and be sure to fully implement interfaces. In this repo we have created a new class named RatingContext and this class
 is using IRatingContext
