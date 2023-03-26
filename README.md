@@ -7,7 +7,16 @@ modified to show how ISP works <br/>
 
 What is Client? <br/>
 
-The client is the code that is interacting with an instance of the interface. It's the calling code
+The client is the code that is interacting with an instance of the interface. It's the calling code <br/>
+
+Minimize interfaces as mush as you can <br/>
+
+More Dependencies Means </br>
+
+* More coupling
+* More brittle code
+* More difficult testing
+* MOre difficult deployments
 
 ## Give a Star! :star:
 If you like this project please give it a star. Thanks!
