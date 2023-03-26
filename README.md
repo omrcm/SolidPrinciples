@@ -40,6 +40,11 @@ Interface Segregation Principle is related with ;
 
 ## Key Takeaways
 
+* Prefer small, cohesive interfaces to large, expansive ones
+* Following ISP helps with SRP and LSP
+* Break up large interfaces by using;
+  * Interface inheritance
+  * The Adapter design pattern
 
 
 ## Reporting Bugs and Asking Questions
