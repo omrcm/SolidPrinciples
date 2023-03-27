@@ -2,25 +2,25 @@ namespace SolidPrinciples;
 
 public class FloodPolicy : Rater
 {
-    public FloodPolicy(IRatingContext context) : base(context)
+    public FloodPolicy(ILogger logger) : base(logger)
     {
     }
 
-    public override void Rate(Policy policy)
+    public override decimal Rate(Policy policy)
     {
-        _logger.Log("Rating Flood policy");
-        _logger.Log("Validating policy");
+        Logger.Log("Rating Flood policy");
+        Logger.Log("Validating policy");
 
         if (policy.BondAmount == 0 || policy.Valuation == 0)
         {
-            _logger.Log("Flood policy must specify Bond Amount and Valuation!");
-            return;
+            Logger.Log("Flood policy must specify Bond Amount and Valuation!");
+            return 0m;
         }
 
         if (policy.BondAmount < 0.8m * policy.Valuation)
         {
-            _logger.Log("Insufficient bound amount");
-            return;
+            Logger.Log("Insufficient bound amount");
+            return 0m;
         }
 
         decimal multiple = 2.0m;
@@ -33,6 +33,6 @@ public class FloodPolicy : Rater
             multiple = 1.0m;
         }
 
-        _context.UpdateRating(policy.BondAmount * 0.5m * multiple);
+        return policy.BondAmount * 0.5m * multiple;
     }
 }

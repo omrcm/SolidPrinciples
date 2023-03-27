@@ -1,9 +1,9 @@
 namespace SolidPrinciples;
 
-public class FileSource
+public class FilePolicySource : IPolicySource
 {
     public string GetDataFromSource()
     {
         return File.ReadAllText("data.json");
-    }
+    } 
 }
