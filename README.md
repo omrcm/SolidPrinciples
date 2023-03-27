@@ -18,6 +18,8 @@ The `master` branch shows the *initial* code. It's the starting point. If you wa
 
 The sample code was written using [JetBrains Rider 2022.3.1](https://www.jetbrains.com/rider/). You can download the free 30-day trial which should work fine with this code. Alternately, you can use Visual Studio Code or another editor you prefer.
 
+![alt text](https://github.com/omrcm/SolidPrinciples/blob/main/solid.png)
+
 ## Reporting Bugs and Asking Questions
 
 Please use [Issues](https://github.com/omrcm/SolidSamples/issues) to report actual bugs in the code. If you have questions, please ask them on twitter (mention [@omrcm](https://twitter.com/omrcm)).
